@@ -43,20 +43,16 @@ public class Restaurante {
 		
 	
 		
-		public void agregarACarroCompra(int posicionJuego, int cantidad){
+		public void agregarACarroCompra(int posicionPlato){
 			
 			
-			Plato JuegoPedido = (Plato)catalogoPlatos.get(posicionJuego-1);
-			
-					carroCompra.agregarPlatoAlPedido(JuegoPedido, cantidad);
+			Plato platoPedido = (Plato)catalogoPlatos.get(posicionPlato-1);
+			carroCompra.agregarPlatoAlPedido(platoPedido);
 				
 			}
-		 /**
-		 * Metodo que elimina un videojuego del carro de pedidos <br>
-		 * <b>pre</b>: El objeto carroCompra esta inicializado <br>
-		 * <b>post</b>: Se ha eliminado un videojuego del pedido <br>
-		 * @param posicionJuego - Posicion que tiene el videojuego en el arreglo. posicionJuego!=null, posicionJuego!="" <br>
-		 */
+		
+		
+		
 		public void eliminarJuegoDelCarro(int posicionJuego){
 			carroCompra.QuitarPlatoDelPedido(posicionJuego-1);
 		}

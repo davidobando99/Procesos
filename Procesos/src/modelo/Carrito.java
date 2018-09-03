@@ -26,7 +26,7 @@ public class Carrito {
 		
 	
 		
-		public void agregarJuegoAlPedido(Plato plato){
+		public void agregarPlatoAlPedido(Plato plato){
 			listaPlatos.add(plato);
 			
 	    }   

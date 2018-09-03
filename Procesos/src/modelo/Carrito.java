@@ -17,8 +17,65 @@ public class Carrito {
 	
 		public Carrito(int total, int cant, String nom, String dir, String tel){
 			listaPlatos = new ArrayList<Plato>();
+			total = totalPrecio;
+			cant = cantidadProductos;
+			nom = nombreComprador;
+			dir = direccionDestinatario;
+			tel = telefonoCliente;
+			
 		}
 		
+		
+		public int getTotalPrecio() {
+			return totalPrecio;
+		}
+
+
+		public void setTotalPrecio(int totalPrecio) {
+			this.totalPrecio = totalPrecio;
+		}
+
+
+		public int getCantidadProductos() {
+			return cantidadProductos;
+		}
+
+
+		public void setCantidadProductos(int cantidadProductos) {
+			this.cantidadProductos = cantidadProductos;
+		}
+
+
+		public String getNombreComprador() {
+			return nombreComprador;
+		}
+
+
+		public void setNombreComprador(String nombreComprador) {
+			this.nombreComprador = nombreComprador;
+		}
+
+
+		public String getDireccionDestinatario() {
+			return direccionDestinatario;
+		}
+
+
+		public void setDireccionDestinatario(String direccionDestinatario) {
+			this.direccionDestinatario = direccionDestinatario;
+		}
+
+
+		public String getTelefonoCliente() {
+			return telefonoCliente;
+		}
+
+
+		public void setTelefonoCliente(String telefonoCliente) {
+			this.telefonoCliente = telefonoCliente;
+		}
+
+
 		public ArrayList<Plato> darListaPlatos(){
 			
 			return listaPlatos;
@@ -26,13 +83,13 @@ public class Carrito {
 		
 	
 		
-		public void agregarPlatoAlPedido(Plato plato){
+		public void agregarPlato(Plato plato){
 			listaPlatos.add(plato);
 			
 	    }   
 		
-		public double calcularTotal(){
-			double total=0;                                 
+		public int calcularTotalPrecio(){
+			int total=0;                                 
 			for(int i=0; i<listaPlatos.size(); i++){
 				Plato nuevoPlato = listaPlatos.get(i);
 				total+= nuevoPlato.darPrecioVenta();
@@ -43,7 +100,7 @@ public class Carrito {
 		
 	   
 			
-		public void QuitarPlatoDelPedido(int posicionPlato){
+		public void eliminarPlato(int posicionPlato){
 			listaPlatos.remove(posicionPlato);
 		}
 	}

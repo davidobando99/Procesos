@@ -44,15 +44,16 @@ public class Restaurante {
 			
 			
 			Plato platoPedido = (Plato)catalogoPlatos.get(posicionPlato-1);
-			carroCompra.agregarPlatoAlPedido(platoPedido);
+			carroCompra.agregarPlato(platoPedido);
 				
 			}
 		
 		
 		
-		public void eliminarPlatoDelCarrito(int posicionJuego){
-			carroCompra.QuitarPlatoDelPedido(posicionJuego-1);
+		public void eliminarPlato(int posicionJuego){
+			carroCompra.eliminarPlato(posicionJuego-1);
 		}
+	
 		
 		
         public static void main(String[] args) {
@@ -66,7 +67,7 @@ public class Restaurante {
 			for(int i=0;i<miRestaurante.darCarroCompra().darListaPlatos().size();i++) {
 				System.out.println(miRestaurante.darCarroCompra().darListaPlatos().get(i).darNombre());
 			}
-			miRestaurante.eliminarPlatoDelCarrito(1);
+			miRestaurante.eliminarPlato(1);
 			System.out.println("Despues de  eliminar");
 			for(int i=0;i<miRestaurante.darCarroCompra().darListaPlatos().size();i++) {
 				System.out.println(miRestaurante.darCarroCompra().darListaPlatos().get(i).darNombre());
@@ -74,7 +75,7 @@ public class Restaurante {
 			
 			System.out.println("Total");
 			miRestaurante.agregarACarroCompra(2);
-			System.out.println(miRestaurante.darCarroCompra().calcularTotal());
+			System.out.println(miRestaurante.darCarroCompra().calcularTotalPrecio());
 			
 		}
 			

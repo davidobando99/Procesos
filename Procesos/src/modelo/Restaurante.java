@@ -11,7 +11,7 @@ public class Restaurante {
 		
 		public Restaurante(){
 			catalogoPlatos = new ArrayList<Plato>();
-			carroCompra= new Carrito();
+			carroCompra= new Carrito(0,0,"","","");
 		}
 		
 		public ArrayList<Plato> darCatalogoPlatos(){
@@ -32,7 +32,7 @@ public class Restaurante {
 		}
 		
 		
-		public String listaVideoJuegos(){
+		public String listaDePlatos(){
 		      String lista = "";
 			  for(int i=0; i<catalogoPlatos.size();i++){
 				  Plato juego = (Plato)catalogoPlatos.get(i);
@@ -48,7 +48,7 @@ public class Restaurante {
 			
 			Plato JuegoPedido = (Plato)catalogoPlatos.get(posicionJuego-1);
 			
-					carroCompra.agregarJuegoAlPedido(JuegoPedido, cantidad);
+					carroCompra.agregarPlatoAlPedido(JuegoPedido, cantidad);
 				
 			}
 		 /**
@@ -58,10 +58,10 @@ public class Restaurante {
 		 * @param posicionJuego - Posicion que tiene el videojuego en el arreglo. posicionJuego!=null, posicionJuego!="" <br>
 		 */
 		public void eliminarJuegoDelCarro(int posicionJuego){
-			carroCompra.QuitarItemDelPedido(posicionJuego-1);
+			carroCompra.QuitarPlatoDelPedido(posicionJuego-1);
 		}
 		
 			
 	}
 
-}
+

@@ -53,11 +53,39 @@ public class Restaurante {
 		
 		
 		
-		public void eliminarJuegoDelCarro(int posicionJuego){
+		public void eliminarPlatoDelCarrito(int posicionJuego){
 			carroCompra.QuitarPlatoDelPedido(posicionJuego-1);
 		}
 		
+		
+        public static void main(String[] args) {
+			Restaurante miRestaurante = new Restaurante();
+			miRestaurante.agregarPlato("Huertas a la Naranja", "20", 540, "NN");
+			miRestaurante.agregarPlato("Huertas BURGUER", "21", 5350, "NN");
+			miRestaurante.agregarPlato("Alitas a la huertas", "22", 400, "NN");
+			
+			miRestaurante.agregarACarroCompra(1);
+			miRestaurante.agregarACarroCompra(2);
+			for(int i=0;i<miRestaurante.darCarroCompra().darListaPlatos().size();i++) {
+				System.out.println(miRestaurante.darCarroCompra().darListaPlatos().get(i).darNombre());
+			}
+			miRestaurante.eliminarPlatoDelCarrito(1);
+			System.out.println("Despues de  eliminar");
+			for(int i=0;i<miRestaurante.darCarroCompra().darListaPlatos().size();i++) {
+				System.out.println(miRestaurante.darCarroCompra().darListaPlatos().get(i).darNombre());
+			}
+			
+		}
 			
 	}
+
+
+
+
+
+
+
+
+
 
 

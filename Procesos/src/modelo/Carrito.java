@@ -35,7 +35,7 @@ public class Carrito {
 			double total=0;                                 
 			for(int i=0; i<listaPlatos.size(); i++){
 				Plato nuevoPlato = listaPlatos.get(i);
-				total+= cantidadProductos* nuevoPlato.darPrecioVenta();
+				total+= nuevoPlato.darPrecioVenta();
 				
 			}return total;
 		}

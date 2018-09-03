@@ -17,10 +17,7 @@ public class Restaurante {
 		public ArrayList<Plato> darCatalogoPlatos(){
 			return catalogoPlatos;
 		}
-		/**
-		* Metodo que da la relacion con el pedido de la Tienda 
-		* @return carro de compra con los pedidos de la Tienda 
-		*/
+		
 		public Carrito darCarroCompra(){
 			return carroCompra;
 		}
@@ -74,6 +71,10 @@ public class Restaurante {
 			for(int i=0;i<miRestaurante.darCarroCompra().darListaPlatos().size();i++) {
 				System.out.println(miRestaurante.darCarroCompra().darListaPlatos().get(i).darNombre());
 			}
+			
+			System.out.println("Total");
+			miRestaurante.agregarACarroCompra(2);
+			System.out.println(miRestaurante.darCarroCompra().calcularTotal());
 			
 		}
 			
